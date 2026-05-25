@@ -43,8 +43,8 @@ Unfiltered search refusal (MEM-02, A8): "A8 — claude-mem search requires `proj
 Conflict resolution (MEM-04): mem wins for decisions/patterns/gotchas; ctx-mode wins for live session facts.
 
 Lookup order on resumption signals ("continue", "as before"):
-- Same-session resume (ctx-mode has session state for this project): ctx-mode first; fall back to claude-mem.
-- Cross-session resume (no ctx-mode session state): claude-mem first with `proj:` + `type:(decision|pattern|todo)`; skip ctx-mode.
+- same-session resume (ctx-mode has session state for this project): ctx-mode first; fall back to claude-mem.
+- cross-session resume (no ctx-mode session state): claude-mem first with `proj:` + `type:(decision|pattern|todo)`; skip ctx-mode.
 
 Probe ctx-mode session metadata once per turn to decide. A4 says memory first; this rule defines *which* memory.
 
