@@ -1,0 +1,13 @@
+{
+  "name": "snailb-skills",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "God Combo Tool Routing Rules — Phase 3 lint surface",
+  "scripts": {
+    "validate": "node bin/lint.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

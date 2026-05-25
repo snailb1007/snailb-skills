@@ -1,89 +1,55 @@
 {
-  "feature_slug": "002-skill-files-memory-layer",
-  "phase": "2",
-  "verified_at": "2026-05-26T10:05:00.000Z",
+  "feature_slug": "003-lint-script",
+  "phase": "3",
+  "verified_at": "2026-05-25T18:35:00.000Z",
   "status": "passed",
   "checks": [
     {
-      "name": "skill_byte_budget_BUDG-02",
+      "name": "linter_live_validate",
       "status": "passed",
-      "details": "code-search 2299B, memory-recall 3023B, external-research 2252B — all under 3072B."
+      "details": "npm run validate exits 0 on live repo HEAD."
     },
     {
-      "name": "baseline_overhead_BUDG-03",
+      "name": "linter_self_test",
       "status": "passed",
-      "details": ".claude/CLAUDE.md 1715 bytes ≈ 429 tokens (bytes/4 upper bound), well under 1500. Procedure recorded in 02-BASELINE.md."
+      "details": "npm run validate -- --self-test exits 0, passing all 4/4 fixtures (good, bad-budget, bad-antipattern-missing, bad-tag-malformed)."
     },
     {
-      "name": "common_4_section_shape",
+      "name": "unknown_flag_rejection",
       "status": "passed",
-      "details": "All 3 skills contain Trigger / Routing decision / Few-shots / Anti-patterns enforced sections in order."
+      "details": "node bin/lint.mjs --bogus exits 2 and prints correct usage message."
     },
     {
-      "name": "memory_recall_tag_taxonomy_MEM-01",
+      "name": "zero_runtime_dependencies",
       "status": "passed",
-      "details": "proj:, type:, and all six type values (decision, bug, pattern, api, gotcha, todo) present with at least one example each."
+      "details": "package.json contains no dependencies or devDependencies."
     },
     {
-      "name": "memory_recall_per_mode_filters_MEM-03",
+      "name": "lint_rules_verified",
       "status": "passed",
-      "details": "F/O/R/M filter rows present matching PRD §5.3."
-    },
-    {
-      "name": "memory_recall_proj_autodetect_MEM-05",
-      "status": "passed",
-      "details": "`git rev-parse --show-toplevel` rule present with cwd fallback."
-    },
-    {
-      "name": "memory_hierarchy_MEM-04_plus_lookup_order",
-      "status": "passed",
-      "details": "Named `Memory hierarchy` block contains conflict-resolution rule and both same-session and cross-session lookup-order branches."
-    },
-    {
-      "name": "out_01_rule_in_code_search_and_external_research",
-      "status": "passed",
-      "details": "OUT-01 (>10KB → context-mode) rule present in both code-search and external-research SKILL.md, verbatim."
-    },
-    {
-      "name": "anti_pattern_enumeration",
-      "status": "passed",
-      "details": "code-search: A1, A2, A3, A10 enumerated with refusal lines. memory-recall: A4, A7, A8, A9. external-research: A3, A6, A10."
-    },
-    {
-      "name": "few_shots_grounded",
-      "status": "passed",
-      "details": "Each of the 3 skills has at least 3 few-shots, each carrying a PRD §5.3 or A-ID grounding annotation."
-    },
-    {
-      "name": "tasks_completed",
-      "status": "passed",
-      "details": "All 22 tasks in specs/002-skill-files-memory-layer/tasks.md executed; see .ai/sessions/2026-05-26-gsd-execution-002-skill-files-memory-layer.md."
-    },
-    {
-      "name": "spec_required_headings",
-      "status": "passed",
-      "details": "Goal, Acceptance Criteria, Test Strategy, Behavior-Preservation Rules headings all present in spec.md."
-    },
-    {
-      "name": "adp_validate_spec",
-      "status": "skipped",
-      "details": "bin/adp.js not present in this repository."
+      "details": "Manually verified linter catches BUDG-01, BUDG-02, LINT-02, and LINT-03 violations, then exits 1."
     }
   ],
-  "spec_path": "specs/002-skill-files-memory-layer/",
-  "current_phase": "Spec-Validation",
-  "last_gate": "Spec-Validation",
+  "spec_path": "specs/003-lint-script/",
+  "current_phase": "Verification",
+  "last_gate": "Verification",
   "last_gate_status": "PASS",
   "consecutive_failures": 0,
   "retry_count": 0,
   "last_failed_step": null,
   "last_failed_rule": null,
   "last_validator_output": null,
-  "updated_at": "2026-05-26T10:05:00.000Z",
+  "updated_at": "2026-05-25T18:35:00.000Z",
   "verified_artifacts": [
-    ".claude/skills/code-search/SKILL.md",
-    ".claude/skills/memory-recall/SKILL.md",
-    ".claude/skills/external-research/SKILL.md",
-    ".planning/phases/02-skill-files-memory-layer/02-BASELINE.md"
+    "package.json",
+    "bin/lint.mjs",
+    "tests/fixtures/good/.claude/CLAUDE.md",
+    "tests/fixtures/good/.claude/skills/code-search/SKILL.md",
+    "tests/fixtures/good/.claude/skills/memory-recall/SKILL.md",
+    "tests/fixtures/good/.claude/skills/external-research/SKILL.md",
+    "tests/fixtures/bad-budget/.claude/CLAUDE.md",
+    "tests/fixtures/bad-budget/.claude/skills/code-search/SKILL.md",
+    "tests/fixtures/bad-antipattern-missing/.claude/skills/memory-recall/SKILL.md",
+    "tests/fixtures/bad-tag-malformed/.claude/skills/memory-recall/SKILL.md"
   ]
 }
