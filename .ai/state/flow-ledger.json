@@ -2,134 +2,114 @@
   "flow_name": "rough-project-flow",
   "flow_version": "1.0.0",
   "flow_definition_path": ".ai/flows/rough-project-flow.yaml",
-  "current_stage": null,
-  "phase_id": "02-skill-files-memory-layer",
-  "feature_slug": "002-skill-files-memory-layer",
-  "feature_dir": "specs/002-skill-files-memory-layer",
-  "created_at": "2026-05-25T16:10:00.000Z",
-  "updated_at": "2026-05-26T10:15:00.000Z",
+  "current_stage": "decision_challenge",
+  "phase_id": "03-lint-script",
+  "feature_slug": "003-lint-script",
+  "feature_dir": "specs/003-lint-script",
+  "created_at": "2026-05-26T10:20:00.000Z",
+  "updated_at": "2026-05-26T10:35:00.000Z",
   "stages": [
     {
       "id": "decision_discovery",
       "name": "Decision discovery",
       "status": "done",
       "artifacts": [
-        ".planning/phases/02-skill-files-memory-layer/02-CONTEXT.md",
-        ".planning/phases/02-skill-files-memory-layer/02-DISCUSSION-LOG.md"
+        ".planning/phases/03-lint-script/03-CONTEXT.md",
+        ".planning/phases/03-lint-script/03-DISCUSSION-LOG.md"
       ],
       "gate_result": null,
-      "started_at": "2026-05-25T16:10:00.000Z",
-      "completed_at": "2026-05-25T16:20:00.000Z",
+      "started_at": "2026-05-26T10:20:00.000Z",
+      "completed_at": "2026-05-26T10:35:00.000Z",
       "revision_count": 0
     },
     {
       "id": "decision_challenge",
       "name": "Decision challenge",
-      "status": "done",
-      "artifacts": [
-        ".planning/phases/02-skill-files-memory-layer/02-CHALLENGE-NOTES.md"
-      ],
+      "status": "pending",
+      "artifacts": [],
       "gate_result": null,
-      "started_at": "2026-05-25T16:20:00.000Z",
-      "completed_at": "2026-05-25T16:25:00.000Z",
+      "started_at": null,
+      "completed_at": null,
       "revision_count": 0
     },
     {
       "id": "canonical_spec",
       "name": "Canonical spec",
-      "status": "done",
-      "artifacts": [
-        "specs/002-skill-files-memory-layer/spec.md"
-      ],
+      "status": "pending",
+      "artifacts": [],
       "gate_result": null,
-      "started_at": "2026-05-25T16:25:00.000Z",
-      "completed_at": "2026-05-25T16:30:00.000Z",
+      "started_at": null,
+      "completed_at": null,
       "revision_count": 0
     },
     {
       "id": "implementation_plan",
       "name": "Implementation plan",
-      "status": "done",
-      "artifacts": [
-        "specs/002-skill-files-memory-layer/plan.md"
-      ],
+      "status": "pending",
+      "artifacts": [],
       "gate_result": null,
-      "started_at": "2026-05-25T16:30:00.000Z",
-      "completed_at": "2026-05-25T16:35:00.000Z",
+      "started_at": null,
+      "completed_at": null,
       "revision_count": 0
     },
     {
       "id": "plan_critique",
       "name": "Plan critique",
-      "status": "done",
-      "artifacts": [
-        ".ai/reviews/002-skill-files-memory-layer/gstack-ceo-review.md",
-        ".ai/reviews/002-skill-files-memory-layer/gstack-eng-review.md"
-      ],
+      "status": "pending",
+      "artifacts": [],
       "gate_result": null,
-      "started_at": "2026-05-25T16:35:00.000Z",
-      "completed_at": "2026-05-25T16:40:00.000Z",
+      "started_at": null,
+      "completed_at": null,
       "revision_count": 0
     },
     {
       "id": "revision_loop",
       "name": "Revision loop",
-      "status": "done",
-      "artifacts": [
-        "specs/002-skill-files-memory-layer/tasks.md"
-      ],
+      "status": "pending",
+      "artifacts": [],
       "gate_result": null,
-      "started_at": "2026-05-25T16:40:00.000Z",
-      "completed_at": "2026-05-25T16:45:00.000Z",
+      "started_at": null,
+      "completed_at": null,
       "revision_count": 0
     },
     {
       "id": "vertical_slicing",
       "name": "Vertical slicing",
-      "status": "done",
-      "artifacts": [
-        "specs/002-skill-files-memory-layer/tasks.md"
-      ],
+      "status": "pending",
+      "artifacts": [],
       "gate_result": null,
-      "started_at": "2026-05-25T16:45:00.000Z",
-      "completed_at": "2026-05-25T16:46:00.000Z",
+      "started_at": null,
+      "completed_at": null,
       "revision_count": 0
     },
     {
       "id": "execution",
       "name": "Execution",
-      "status": "done",
-      "artifacts": [
-        ".ai/sessions/2026-05-26-gsd-execution-002-skill-files-memory-layer.md"
-      ],
+      "status": "pending",
+      "artifacts": [],
       "gate_result": null,
-      "started_at": "2026-05-25T16:46:00.000Z",
-      "completed_at": "2026-05-26T10:00:00.000Z",
+      "started_at": null,
+      "completed_at": null,
       "revision_count": 0
     },
     {
       "id": "verification",
       "name": "Verification",
-      "status": "done",
-      "artifacts": [
-        ".ai/state/run-state.json"
-      ],
-      "gate_result": "passed",
-      "started_at": "2026-05-26T10:00:00.000Z",
-      "completed_at": "2026-05-26T10:10:00.000Z",
+      "status": "pending",
+      "artifacts": [],
+      "gate_result": null,
+      "started_at": null,
+      "completed_at": null,
       "revision_count": 0
     },
     {
       "id": "release_readiness",
       "name": "Release readiness",
-      "status": "done",
-      "artifacts": [
-        ".ai/reviews/002-skill-files-memory-layer/ship-decision.md",
-        ".ai/state/handoff.md"
-      ],
-      "gate_result": "ready_for_local_handoff",
-      "started_at": "2026-05-26T10:10:00.000Z",
-      "completed_at": "2026-05-26T10:15:00.000Z",
+      "status": "pending",
+      "artifacts": [],
+      "gate_result": null,
+      "started_at": null,
+      "completed_at": null,
       "revision_count": 0
     }
   ],

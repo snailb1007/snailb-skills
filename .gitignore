@@ -16,7 +16,6 @@ jspm_packages/
 Thumbs.db
 
 # Agent files / Local development configurations
-.claude/
 .serena/project.local.yml
 .ai/sessions/
 .ai/memory/
