@@ -1,0 +1,25 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Agent files / Local development configurations
+.claude/
+.serena/project.local.yml
+.ai/sessions/
+.ai/memory/
+.ai/reviews/
+.ai/state/
+.specify/
