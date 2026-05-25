@@ -17,7 +17,10 @@ This phase does NOT implement the lint script (Phase 3) or the validation harnes
 
 ### Memory Hierarchy & Conflict Resolution
 - **D-01 (Source-of-truth split):** `claude-mem` owns cross-session intent — decisions, locked patterns, recurring bugs, gotchas (lifetime: weeks/months). `context-mode` owns current-session state — in-flight work, ephemeral observations, scratch outputs. On conflict about the same fact: `claude-mem` wins for decisions/patterns/gotchas; `context-mode` wins for live session state.
-- **D-02 (Lookup order):** When the user says "continue where we left off" / "as before" / any session-resumption signal, the agent MUST check `context-mode` first (cheaper, holds in-flight session state), then fall back to `claude-mem` for locked intent. This aligns with the `cheapest first` principle and satisfies anti-pattern A4 ("continue/as before → memory first" — both stores count as memory; ctx-mode is just cheaper).
+- **D-02 (Lookup order on resumption signal):** Two-rule policy conditioned on session state.
+  - **Same-session resume** (ctx-mode has prior turns from this session): check `context-mode` first, fall back to `claude-mem` only if ctx-mode lacks the answer.
+  - **Cross-session resume** (new session — ctx-mode is empty/cold for this thread): check `claude-mem` first using `proj:` + `type:(decision|pattern|todo)` filters; ctx-mode lookup is skipped (would be a no-op).
+  - The agent decides which case applies by probing ctx-mode session metadata once at turn start; if there is no prior session state for this project, treat as cross-session. This satisfies anti-pattern A4 ("continue/as before → memory first") and the `cheapest first` principle without wasting a lookup on cold sessions.
 - **D-03:** The `memory-recall` SKILL.md must encode D-01 and D-02 verbatim as a "Conflict resolution" subsection so downstream agents can quote it when refusing scattergun lookups.
 
 ### Downstream Agent Discretion
