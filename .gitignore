@@ -22,3 +22,14 @@ Thumbs.db
 .ai/reviews/
 .ai/state/
 .specify/
+.agents/
+
+# Process/workflow scaffolding (ATLAS) — keep only the committed project flow
+.ai/flows/atlas-flow.yaml
+
+# Installed agent tooling under .claude/skills/ is NOT part of this project.
+# Ignore everything, then re-include only the three routing skills we ship.
+.claude/skills/*
+!.claude/skills/code-search/
+!.claude/skills/external-research/
+!.claude/skills/memory-recall/

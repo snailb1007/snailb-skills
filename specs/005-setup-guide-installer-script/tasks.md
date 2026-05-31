@@ -1,0 +1,15 @@
+- [ ] Task 1: Modify root `package.json` to add `"install-to": "node bin/install-rules.mjs"`
+- [ ] Task 2: Implement `bin/install-rules.mjs`
+    - [ ] Implement CLI argument parsing (`target-path` and `--skip-package-json`)
+    - [ ] Implement target directory presence validation
+    - [ ] Implement unified backup logic (`.claude-backup-YYYYMMDD-HHMMSS`)
+    - [ ] Implement copying `.claude` folder (CLAUDE.md + skills/) and `bin/lint.mjs`
+    - [ ] Implement target `package.json` integration (add `validate` script + backup package.json)
+    - [ ] Implement post-install verification (run linter in target)
+- [ ] Task 3: Create root `README.md` setup guide
+- [ ] Task 4: Verify via mock project smoke tests
+    - [ ] Run invalid arguments validation test
+    - [ ] Run clean installation test
+    - [ ] Run backup logic test
+    - [ ] Run `--skip-package-json` bypass test
+    - [ ] Clean up mock project directories
